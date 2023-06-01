@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import './App.css';
 import Navigation from './components/ui/Navigation';
@@ -8,15 +8,15 @@ import Favourites from './components/Favourites/Favourites';
 
 const App = () => {
 	return (
-		<Fragment>
+		<BrowserRouter>
 			<Navigation />
-				<main>
-					<Routes>
-						<Route path='/' component={Products} />
-						<Route path='/favourites' component={Favourites} />
-					</Routes>
-				</main>
-		</Fragment>
+			<main>
+			<Routes>
+				<Route path="/" element={<Products />} />
+				<Route path="/favourites" element={<Favourites />} />
+			</Routes>
+			</main>
+		</BrowserRouter>
 	);
 }
 
