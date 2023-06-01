@@ -28,3 +28,23 @@ const initialState = {
         }
       ]
 }
+
+const productsReducer = (state = initialState, action) => {
+	if(action.type === 'TOGGLE_FAVOURITE') {
+		const productIndex = state.products.findIndex(product => product.id === action.productId);
+		const newFavStatus = !state.products[productIndex].isFavorite;
+		const updatedProducts = [...state.products];
+
+		updatedProducts[productIndex] = {
+			...state.products[productIndex],
+			isFavorite: newFavStatus
+		};
+
+		return {
+			...state,
+			products: updatedProducts
+		};
+	}
+}
+
+export default productsReducer;
