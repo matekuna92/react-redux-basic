@@ -1,7 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Products = () => {
-    return <h1>Products</h1>
+    const products = useSelector(state => state.shop.products);
+
+    return (
+        <ul className='product-list'>
+            {products.map(product => (
+                <p>{product.title}</p>
+            ))}
+        </ul>
+    );
 };
 
 export default Products;
