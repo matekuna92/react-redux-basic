@@ -3,23 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import { combineReducers, createStore } from 'redux';
+// import { Provider } from 'react-redux';
+// import { combineReducers, createStore } from 'redux';
+//import productsReducer from './store/reducers/productsReducer';
+// const rootReducer = combineReducers({
+//     shop: productsReducer
+// })
+//const store = createStore(rootReducer);
 
-import productsReducer from './store/reducers/productsReducer';
-
-const rootReducer = combineReducers({
-    shop: productsReducer
-})
-
-const store = createStore(rootReducer);
+// this is the default export there, so naming doesnt matter
+import ProductsProvider from './context/products-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <ProductsProvider>
       <App />
-    </Provider>
+    </ProductsProvider>
   </React.StrictMode>
 );
 
