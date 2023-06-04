@@ -1,0 +1,43 @@
+.product-item h2 {
+    margin: 0.25rem 0;
+    font-size: 1.2rem;
+}
+
+.product-item p {
+    margin: 0.25rem 0;
+}
+
+.product-item .is-fav {
+    color: #ff2058;
+}
+
+button {
+    font: inherit;
+    background: #ff2058;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #ff2058;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover,
+button:active,
+button.btn-dark {
+    background: white;
+    color: #ff2058;
+}
+
+button.btn-dark:hover,
+button.btn-dark:active {
+    background: #ff2058;
+    color: white;
+    box-shadow: none;
+}
+
+

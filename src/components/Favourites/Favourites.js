@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ProductItem from '../Products/ProductItem';
 import FavouriteItem from './FavouriteItem';
 
 const Favourites = () => {
