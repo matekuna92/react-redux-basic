@@ -1,5 +1,5 @@
 import Card from "../ui/Card";
-
+import './FavouriteItem.css';
 
 const FavouriteItem = (props) => {
     return (
