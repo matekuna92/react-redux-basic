@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React, { createContext, useState } from 'react';
 
 export const ProductsContext = createContext({
-    products: []
+    products: [],
+    toggleFav: (id) => {}
 });
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default props => {
     const [productsList, setproductsList] = useState([
         {
@@ -32,8 +35,24 @@ export default props => {
         }
     ]);
 
+    const toggleFavourite = productId => {
+        setproductsList(currentProductsList => {
+            const productIndex = currentProductsList.findIndex(product => product.id === productId);
+			const newFavStatus = !currentProductsList[productIndex].isFavorite;
+			const updatedProducts = [...currentProductsList];
+
+			updatedProducts[productIndex] = {
+				...currentProductsList[productIndex],
+				isFavorite: newFavStatus
+			};
+
+        console.log('Updated Products', updatedProducts);
+        return updatedProducts;
+        });
+    };
+
     return (
-        <ProductsContext.Provider value={{ products: productsList }}>
+        <ProductsContext.Provider value={{ products: productsList, toggleFav: toggleFavourite }}>
             {props.children}
         </ProductsContext.Provider>
     );
