@@ -41,6 +41,8 @@ const productsReducer = (state = initialState, action) => {
 				isFavorite: newFavStatus
 			};
 
+      console.log('Updated Products', updatedProducts);
+
 			return {
 				...state,
 				products: updatedProducts

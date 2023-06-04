@@ -1,9 +1,13 @@
+import { useDispatch } from 'react-redux';
 import Card from "../ui/Card";
+import { toggleFavoriteProduct } from '../../store/actions/productsAction';
 
 
 const ProductItem = (props) => {
+    const dispatch = useDispatch();
+
     const toggleFavouriteHandler = () => {
-        console.log('toggle');
+        dispatch(toggleFavoriteProduct(props.id));
     }
 
     return (
